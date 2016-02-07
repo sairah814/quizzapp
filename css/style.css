@@ -1,63 +1,335 @@
-/*
+        /*
 The CSS code gets to executed from top to bottom and left to right
 */
-
-
-/* CSS reset
+        /* CSS reset
 (all the browsers will see the website in the same by setting every tag to 0 (the website will look the same on all browsers))
 */
 
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    /*The box-sizing property is used to tell the browser what the sizing properties (width and height) should include border-box.*/
-    box-sizing: border-box;
-    /*reset Chrome user agent styles*/
-    -webkit-margin-before: 0px;
-    -webkit-margin-after: 0px;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-    -webkit-padding-before: 0px;
-    -webkit-padding-after: 0px;
-    -webkit-padding-start: 0px;
-    -webkit-padding-end: 0px;
-}
-
-
-/* General styles
-(the styles used everywhere in the page (like the Body) or styles which are used in more than 2 of the modules bellow (h2, h3, h4, h5, h6, p, a, ul, li))
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            /*The box-sizing property is used to tell the browser what the sizing properties (width and height) should include border-box.*/
+            box-sizing: border-box;
+            /*reset Chrome user agent styles*/
+            -webkit-margin-before: 0px;
+            -webkit-margin-after: 0px;
+            -webkit-margin-start: 0px;
+            -webkit-margin-end: 0px;
+            -webkit-padding-before: 0px;
+            -webkit-padding-after: 0px;
+            -webkit-padding-start: 0px;
+            -webkit-padding-end: 0px;
+        }
+        /* General styles
+(the styles used everywhere in the page (like the Body) or styles which are used in more than 2 of the modules below (h2, h3, h4, h5, h6, p, a, ul, li))
 */
 
-body {}
+        body {
+            background-image: url("../images/grandprismatic.jpg");
+            background-size: cover;
+            background-position: 20% 90%;
+            background-repeat: no-repeat;
+            color: #FFE0C7;
+            /*#E8EAED*/
+            text-align: center;
+            padding: 3em 0;
+        }
 
-.main-wrapper {
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-}
+        .main-wrapper {
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
 
-.main {}
+        .main {
+            background: rgba(27, 27, 51, .6);
+            border-radius: 20px;
+            width: 105rem;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Lato', sans-serif;
+        }
 
+        .modal {
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-/* Header styles
+        button {
+            padding: 2rem 4rem 2rem 4rem;
+            font-size: 2.5rem;
+            font-weight: 400;
+            border-radius: 10px;
+            background-color: #DFEBFA;
+            color: black;
+            border: #ACB9CA solid 1px;
+        }
+
+        button:hover {
+            background-color: #8A96A6;
+        }
+        /* Header styles
 (all the styles inside the < header > or < nav > tags)
 */
 
-header {}
+        header {
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
 
+        .head-image {
+            display: inline-block;
+            vertical-align: middle;
+        }
 
-/* Content styles
+        .head-text {
+            display: inline-block;
+            vertical-align: middle;
+            font-family: 'Old Standard TT', serif;
+            font-size: 5.5rem;
+            font-weight: 700;
+            color: #0d3b4c;
+            margin-left: 1rem;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 2.5rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        /* Content styles
 (all the styles inside the < sections > or < aside > tags)
 */
+        /*Styles for quiz-landing section*/
 
+        .quiz-landing {
+            padding-top: 6rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            height: 40rem;
+        }
 
-/* Footer styles
+        button#start {
+            margin-top: 5rem;
+        }
+        /*Styles for quiz section*/
+
+        .quiz {
+            height: 80rem;
+            margin-bottom: 2rem;
+        }
+
+        .image {
+            width: 90%;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .question-image {
+            max-width: 60%;
+            max-height: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 3rem;
+        }
+
+        .answer-selection {
+            width: 20%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 2rem;
+        }
+
+        ul.answer-choices {
+            list-style-type: none;
+            text-align: left;
+            font-size: 2.5rem;
+        }
+
+        .radio-choice {
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+        }
+
+        .radio-choice input {
+            visibility: hidden;
+            position: absolute;
+        }
+
+        .radio-choice i {
+            display: inline-block;
+            vertical-align: middle;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            transition: 0.2s;
+            box-shadow: inset 0 0 0 16px #fff;
+            border: 1px solid gray;
+            background: gray;
+            margin-bottom: .3rem;
+        }
+
+        .radio-choice:hover i {
+            /* HOVER <i> STYLE */
+            box-shadow: inset 0 0 0 3px #fff;
+            background: gray;
+        }
+
+        .radio-choice input:checked + i {
+            /* (RADIO CHECKED) <i> STYLE */
+            box-shadow: inset 0 0 0 3px #fff;
+            background: orange;
+        }
+
+        .choice {
+            margin-left: 1rem;
+            font-weight: 300;
+        }
+
+        .progress-nav {
+            display: inline-block;
+            width: 55rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: snow solid 1px;
+        }
+
+        h4 {
+            display: inline-block;
+            font-size: 2rem;
+            font-weight: 200;
+        }
+
+        #current-question {
+            font-weight: 900;
+        }
+
+        button#next {
+            display: inline-block;
+            margin-left: 28rem;
+            padding: 1.5rem 3rem 1.5rem 3rem;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .fa {
+            display: block;
+            font-size: 2.5rem;
+            margin-left: auto;
+            padding-left: 1rem;
+            color: #2C5488;
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+        .fa-chevron-circle-right {
+            margin-bottom: .25rem;
+            margin-left: 1rem;
+        }
+        /*Styles for results section*/
+
+        .results {
+            padding-top: 6rem;
+            margin-top: 1rem;
+            margin-bottom: 4rem;
+            height: auto;
+        }
+
+        .relative-feedback {
+            color: #FFE0C7;
+            /*change this color*/
+        }
+
+        .score {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            font-size: 3rem;
+            color: snow;
+        }
+
+        .user-score {
+            font-size: 4rem;
+        }
+
+        button#try-again {
+            display: block;
+            padding: 2rem 2.5rem 2rem 2.5rem;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 3.5rem;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        p.results-text {
+            font-size: 2.5rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+        /*Styles for modal */
+
+        .answer-image {
+            max-width: 25%;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .answer-details {
+            display: inline-block;
+            vertical-align: middle;
+            max-width: 45rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .fa-check-circle {
+            display: inline-block;
+            margin-top: .5rem;
+            margin-bottom: .5rem;
+            margin-right: .3rem;
+            padding-left: 0;
+            font-size: 2.5rem;
+            color: #81E331;
+        }
+
+        .fa-times-circle {
+            display: inline-block;
+            margin-top: .5rem;
+            margin-bottom: .5rem;
+            margin-right: .3rem;
+            padding-left: 0;
+            font-size: 2.5rem;
+            color: #FF7C89;
+        }
+
+        #user-answer {
+            font-size: 2.5rem;
+        }
+
+        #correct-answer {
+            font-size: 2.5rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        #answer-description {
+            text-align: left;
+        }
+        /* Footer styles
 (all the styles inside the < footer > tag)
 */
-
-
-/* Responsive styles
+        /* Responsive styles
 (the very last module in the CSS, contains all the media queries and it is dealing with the compatibility with mobiles and tablets)
 */
