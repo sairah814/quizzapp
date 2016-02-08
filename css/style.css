@@ -26,13 +26,18 @@ The CSS code gets to executed from top to bottom and left to right
 (the styles used everywhere in the page (like the Body) or styles which are used in more than 2 of the modules below (h2, h3, h4, h5, h6, p, a, ul, li))
 */
 
-        body {
-            background-image: url("../images/grandprismatic.jpg");
+        html {
+            background: url("../images/grandprismatic.jpg") rgba(0, 0, 0, 0) no-repeat center center fixed;
+            /*no-repeat center center fixed*/
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
             background-size: cover;
-            background-position: 20% 90%;
-            background-repeat: no-repeat;
+            background-position: 45% 30%;
+        }
+
+        body {
             color: #FFE0C7;
-            /*#E8EAED*/
             text-align: center;
             padding: 3em 0;
         }
@@ -76,8 +81,8 @@ The CSS code gets to executed from top to bottom and left to right
 */
 
         header {
-            margin-top: 3rem;
-            margin-bottom: 3rem;
+            margin-top: .8rem;
+            margin-bottom: 8rem;
         }
 
         .head-image {
@@ -127,6 +132,7 @@ The CSS code gets to executed from top to bottom and left to right
         .quiz {
             height: 80rem;
             margin-bottom: 2rem;
+            display: none;
         }
 
         .image {
@@ -245,6 +251,7 @@ The CSS code gets to executed from top to bottom and left to right
             margin-top: 1rem;
             margin-bottom: 4rem;
             height: auto;
+            display: none;
         }
 
         .relative-feedback {
