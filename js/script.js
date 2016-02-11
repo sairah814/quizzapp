@@ -49,9 +49,24 @@ $(document).ready(function () {
         if (userResponse == correctResponse) {
             totalCorrect += 1;
             $('.user-score').text(totalCorrect);
-            $() //append the results with "you got this one"
+            $('.results-list').append("<div class='answer-image'><img class='image' src='" + questions[questionNumber].question + " /></div><div class='answer-details'><div id='user-answer'><i class='fa fa-check-circle'></i>You got this one!</div> <div id='correct-answer'>Answer: " + questions[questionNumber].choices[correctResponse] + "</div><div id='answer-description'>" + questions[questionNumber].answerDetails + "</div><br/>");
+            /*$('#user-answer').append("<i class='fa fa-check-circle'></i>You got this one!");
+            $('#correct-answer').append("Answer: " + questions[questionNumber].choices[correctResponse]);
+            $('#answer-description').append(questions[questionNumber].answerDetails);*/
+            //append the results with "you got this one"
+            /*
+            <div class="answer-image">
+                    <img class="image" src="images/grandcanyon.JPG" />
+                </div>
+                <div class="answer-details">
+                    <div id="user-answer"><i class='fa fa-check-circle'></i>You got this one!</div>
+                    <div id="correct-answer">Answer: Arizona</div>
+                    <div id="answer-description">The Grand Canyon, the largest canyon in the world, is actually located in 3 states, although it mainly stretches across Arizona.</div>
+                </div>
+                */
         } else {
             //append the results with "you didn't"
+            $('.results-list').append("<div class='answer-image'><img class='image' src='" + questions[questionNumber].question + " /></div><div class='answer-details'><div id='user-answer'><i class='fa fa-times-circle'></i>You missed this one. </div> <div id='correct-answer'>Answer: " + questions[questionNumber].choices[correctResponse] + "</div><div id='answer-description'>" + questions[questionNumber].answerDetails + "</div><br/>");
         }
     }
 
